@@ -61,29 +61,27 @@ poderes = {
         ]
 }
 
-fuga()
+while True:
+    try:
+        print(f'''
+        escolha seu personagem:
+        \t1|gojo
+        \t2|sukuna
+        \t3|megumi  ''', end='\n')
+        escolha = int(input('eu serei... '))
+        print(personagens[escolha - 1])
 
-# while True:
-#     try:
-#         print(f'''
-#         escolha seu personagem:
-#         \t1|gojo
-#         \t2|sukuna
-#         \t3|megumi  ''', end='\n')
-#         escolha = int(input('eu serei... '))
-#         print(personagens[escolha - 1])
+        if escolha < 1 or escolha > len(personagens):
+            raise ValueError
 
-#         if escolha < 1 or escolha > len(personagens):
-#             raise ValueError
+        character = deepcopy(poderes[personagens[escolha - 1]])
+        break
 
-#         character = deepcopy(poderes[personagens[escolha - 1]])
-#         break
-
-#     except ValueError or NameError:
-#         print('personagem inválido!')
-#         os.system('cls' if os.name == 'nt' else 'clear')
-#     except:
-#         print('\t\033[091mERRO!\033[0m', end='\ntente novamente')
-#         time.sleep(2)
-#         os.system('cls' if os.name == 'nt' else 'clear')
+    except ValueError or NameError:
+        print('personagem inválido!')
+        os.system('cls' if os.name == 'nt' else 'clear')
+    except:
+        print('\t\033[091mERRO!\033[0m', end='\ntente novamente')
+        time.sleep(2)
+        os.system('cls' if os.name == 'nt' else 'clear')
         
