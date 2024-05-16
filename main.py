@@ -83,3 +83,5 @@ while True:
         print('\t\033[091mERRO!\033[0m', end='\ntente novamente')
         time.sleep(2)
         os.system('cls' if os.name == 'nt' else 'clear')
+
+playsound('audios_mp3/Fuga.mp3')
