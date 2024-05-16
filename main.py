@@ -16,7 +16,7 @@ def audio(arquivo):
         def closure():
             def reproduzir_audio(file_path):
                 playsound(file_path)
-            audio_thread = threading.Thread(target=reproduzir_audio, args=(arquivo))
+            audio_thread = threading.Thread(target=reproduzir_audio, args=(f'audios/{arquivo}',))
             audio_thread.start()
             interação()
             audio_thread.join()
@@ -26,13 +26,13 @@ def audio(arquivo):
 def fuga():
     @audio('Fuga.mp3')
     def interação():
-        time.sleep(2.3)
+        time.sleep(2.5)
         print('\nvocê:', end=' ')
         mensagem('abrir portões...')
-        time.sleep(3.2)
+        time.sleep(3.4)
         print('\ninimigo:', end=' ')
         mensagem('isso é?..')
-        time.sleep(3)
+        time.sleep(3.2)
         print('\nvocê:', end=' ')
         mensagem('\033[091mflecha de fogo\033[0m!')
     interação()
