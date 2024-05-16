@@ -16,7 +16,7 @@ def audio(arquivo):
         def closure():
             def reproduzir_audio(file_path):
                 playsound(file_path)
-            audio_thread = threading.Thread(target=reproduzir_audio, args=(f"C:\\Users\\gabri\\Downloads\\{arquivo}",))
+            audio_thread = threading.Thread(target=reproduzir_audio, args=(arquivo))
             audio_thread.start()
             interação()
             audio_thread.join()
@@ -35,9 +35,8 @@ def fuga():
         time.sleep(3)
         print('\nvocê:', end=' ')
         mensagem('\033[091mflecha de fogo\033[0m!')
-        
-        
     interação()
+
 
 status = {'hp' : 5000, 
           'awk' : None}
@@ -84,4 +83,3 @@ while True:
         print('\t\033[091mERRO!\033[0m', end='\ntente novamente')
         time.sleep(2)
         os.system('cls' if os.name == 'nt' else 'clear')
-        
