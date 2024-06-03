@@ -5,7 +5,6 @@ import threading
 import time
 import sys
 from random import choice, uniform
-import signal
 import string
 
 voicelines = ['gambare.mp3', 'yowaimo.mp3']
